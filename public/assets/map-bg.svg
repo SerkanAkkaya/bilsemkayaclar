@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <!-- Arka plan -->
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6b26b"/>
+      <stop offset="40%" stop-color="#f9cb9c"/>
+      <stop offset="100%" stop-color="#fce5cd"/>
+    </linearGradient>
+    <radialGradient id="landGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ffe6b9"/>
+      <stop offset="50%" stop-color="#f3d4a4"/>
+      <stop offset="100%" stop-color="#e1b87f"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#sky)" />
+
+  <!-- Uzak volkan -->
+  <g opacity="0.55">
+    <path d="M80 360 L200 120 L320 360 Z" fill="#7f4b3a"/>
+    <path d="M200 120 L230 190 L170 190 Z" fill="#d35400"/>
+  </g>
+
+  <!-- Ada gövdesi -->
+  <path d="M140 410
+           C 120 330, 130 250, 190 210
+           C 260 160, 360 120, 470 120
+           C 580 120, 650 150, 710 200
+           C 780 260, 800 320, 780 380
+           C 760 440, 700 470, 620 490
+           C 520 515, 420 510, 330 490
+           C 260 475, 190 450, 140 410 Z"
+        fill="url(#landGrad)"
+        stroke="#8d5f3a"
+        stroke-width="4"
+        stroke-linejoin="round"/>
+
+  <!-- Noktalı rota -->
+  <path id="route" d="
+        M 190 400
+        C 250 380, 280 340, 310 300
+        C 340 260, 390 245, 440 260
+        C 490 275, 530 310, 555 340
+        C 590 380, 635 390, 680 380
+        C 720 370, 750 340, 770 315"
+        fill="none"
+        stroke="#7a5c3a"
+        stroke-width="7"
+        stroke-linecap="round"
+        stroke-dasharray="2 22"/>
+
+  <!-- X final -->
+  <g transform="translate(770,230)">
+    <circle r="38" fill="none" stroke="#5c3b24" stroke-width="5"/>
+    <path d="M -18 -18 L 18 18 M -18 18 L 18 -18"
+          stroke="#5c3b24" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- Küçük süs adacıkları -->
+  <path d="M260 450 C 280 445, 305 445, 330 452 C 305 470, 280 470, 260 450 Z"
+        fill="#f1d0a3" stroke="#a8743a" stroke-width="2"/>
+  <path d="M620 440 C 640 438, 660 438, 680 445 C 660 465, 640 465, 620 440 Z"
+        fill="#f1d0a3" stroke="#a8743a" stroke-width="2"/>
+
+  <!-- Yazılar (örnek, UI tarafında da isimler gösteriliyor) -->
+  <text x="195" y="435" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21">KAYAÇLAR KAPISI</text>
+  <text x="195" y="454" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21"></text>
+
+  <text x="330" y="240" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21">MADENLER VADİSİ</text>
+  <text x="330" y="259" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21"></text>
+
+  <text x="470" y="320" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21">GEZEGENLER ÇÖLÜ</text>
+  <text x="470" y="339" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21"></text>
+
+  <text x="640" y="420" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21">SÜRDÜRÜLEBİLİRLİK</text>
+  <text x="640" y="439" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21">ALANI</text>
+
+  <text x="735" y="280" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21">GÜNLÜK HAYAT</text>
+		 <text x="735" y="299" font-family="Poppins" font-weight="700"
+        font-size="16" fill="#3c2a21">NOKTASI</text>
+</svg>

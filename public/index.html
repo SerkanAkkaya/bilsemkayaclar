@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kayaçlar Yolculuğu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Kayaçlar Yolculuğu</h1>
+      <p class="tagline">
+        Harita üzerinde ilerleyerek kayaçlar, madenler, gezegenler ve sürdürülebilirlik bölümlerini keşfet!
+      </p>
+    </header>
+
+    <!-- Harita ekranı (Ana ekran) -->
+    <section id="screen-home" class="screen active">
+      <div class="card map-card">
+        <h2>Jeoloji Haritası</h2>
+        <p class="map-intro">
+          Bölümleri sırayla tamamlamalısın. Bir bölüm bitmeden diğeri açılmaz.
+          <br />
+          <strong>01</strong> ile başla ve yolu takip et!
+        </p>
+
+        <div class="map-wrapper">
+          <img src="assets/map-bg.svg" alt="Jeoloji Haritası" class="map-image" />
+
+          <!-- 5 ana bölge düğmesi -->
+          <button class="map-node" data-section="rocks" data-index="0">
+            <span class="node-number">01</span>
+            <span class="node-label">Kayaçlar</span>
+          </button>
+
+          <button class="map-node" data-section="minerals" data-index="1">
+            <span class="node-number">02</span>
+            <span class="node-label">Madenler</span>
+          </button>
+
+          <button class="map-node" data-section="planets" data-index="2">
+            <span class="node-number">03</span>
+            <span class="node-label">Gezegenler</span>
+          </button>
+
+          <button class="map-node" data-section="sustainability" data-index="3">
+            <span class="node-number">04</span>
+            <span class="node-label">Sürdürülebilirlik</span>
+          </button>
+
+          <button class="map-node" data-section="daily" data-index="4">
+            <span class="node-number">05</span>
+            <span class="node-label">Günlük Hayat</span>
+          </button>
+
+          <!-- Final X noktası (kaçış) -->
+          <div class="map-final">
+            <span class="final-x">X</span>
+            <span class="final-label">Kaçış Noktası</span>
+          </div>
+        </div>
+
+        <div class="map-bottom">
+          <div class="map-status">
+            <h3>Bölüm Durumları</h3>
+            <ul id="scores-list" class="scores-list"></ul>
+            <p id="lock-message" class="lock-message"></p>
+          </div>
+          <div class="map-actions">
+            <button id="btn-check-escape" class="btn ghost">
+              🔐 Kaçışı ve Jeolog Seviyeni Kontrol Et
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz ekranı -->
+    <section id="screen-quiz" class="screen">
+      <div class="card">
+        <div class="quiz-header">
+          <div>
+            <h2 id="quiz-title">Bölüm</h2>
+            <p id="quiz-subtitle" class="quiz-subtitle"></p>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar-bg">
+              <div id="progress-bar" class="progress-bar-fill"></div>
+            </div>
+            <span id="progress-text" class="progress-text">Soru 1 / 10</span>
+          </div>
+        </div>
+
+        <div class="question-area">
+          <div id="question-type-pill" class="question-type-pill"></div>
+          <div id="question-image-wrapper" class="question-image-wrapper hidden">
+            <img id="question-image" src="" alt="Soru görseli" class="question-image" />
+          </div>
+          <p id="question-text" class="question-text"></p>
+          <div id="options-container" class="options-container">
+            <!-- JS ile doldurulacak -->
+          </div>
+        </div>
+
+        <div class="quiz-footer">
+          <p id="feedback-text" class="feedback-text"></p>
+          <div class="quiz-footer-buttons">
+            <button id="btn-next-question" class="btn primary" disabled>
+              Sonraki Soru ▶
+            </button>
+            <button id="btn-quit" class="btn ghost small">
+              ⬅ Haritaya Dön
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rozet ekranı -->
+    <section id="screen-badge" class="screen">
+      <div class="card">
+        <h2 id="badge-title">Tebrikler!</h2>
+        <p id="badge-score-text"></p>
+
+        <div class="badge-display">
+          <div class="badge-circle" id="badge-circle">
+            <span id="badge-emoji">🏅</span>
+          </div>
+          <p id="badge-name" class="badge-name"></p>
+        </div>
+
+        <p class="hint-text">
+          Haritaya dönüp bir sonraki bölümü açabilir ve
+          <strong>laboratuvardan kaçmaya</strong> devam edebilirsin.
+        </p>
+
+        <div class="badge-buttons">
+          <button id="btn-badge-home" class="btn secondary">
+            ⬅ Haritaya Dön
+          </button>
+          <button id="btn-badge-escape" class="btn primary">
+            🔐 Kaçışı ve Jeolog Seviyeni Kontrol Et
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kaçış ekranı -->
+    <section id="screen-escape" class="screen">
+      <div class="card">
+        <h2>Kaçış ve Jeolog Seviyesi</h2>
+        <p id="escape-message"></p>
+        <p id="escape-code-text" class="escape-code-text"></p>
+        <p id="rank-text" class="rank-text"></p>
+
+        <button id="btn-escape-home" class="btn secondary">
+          ⬅ Haritaya Dön
+        </button>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p>Hazırlayan: 7. Sınıf Jeoloji Kaçış Odası Projesi</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
