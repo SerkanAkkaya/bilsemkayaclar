@@ -1,171 +1,219 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8" />
-  <title>Kayaçlar Yolculuğu</title>
+  <title>Kayaçlar Yolculuğu - Retro Oyun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0a;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Press Start 2P', monospace;
+      overflow: hidden;
+    }
+
+    .game-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    #game-canvas {
+      border: 4px solid #333;
+      border-radius: 8px;
+      box-shadow:
+        0 0 0 4px #111,
+        0 0 40px rgba(100, 100, 255, 0.3),
+        inset 0 0 100px rgba(0, 0, 0, 0.5);
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
+    /* CRT Scanline effect */
+    .scanlines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(0deg,
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.1) 1px,
+          transparent 1px,
+          transparent 2px);
+      border-radius: 8px;
+    }
+
+    .controls-info {
+      color: #666;
+      font-size: 10px;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .controls-info span {
+      color: #888;
+      background: #222;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin: 0 4px;
+    }
+
+    .title-glow {
+      color: #fff;
+      text-shadow:
+        0 0 10px #88f,
+        0 0 20px #88f,
+        0 0 30px #88f;
+      font-size: 12px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      #game-canvas {
+        width: 100vw;
+        height: auto;
+        max-width: 800px;
+        border-radius: 0;
+      }
+
+      .game-container {
+        width: 100%;
+      }
+    }
+
+    /* Mobile touch controls */
+    .mobile-controls {
+      display: none;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .mobile-btn {
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: all 0.1s ease;
+    }
+
+    .mobile-btn:active {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(0.95);
+    }
+
+    .mobile-controls-move {
+      display: flex;
+      gap: 10px;
+    }
+
+    @media (max-width: 850px),
+    (pointer: coarse) {
+      .mobile-controls {
+        display: flex;
+        align-items: center;
+      }
+
+      .controls-info {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="app">
-    <header class="app-header">
-      <h1>Kayaçlar Yolculuğu</h1>
-      <p class="tagline">
-        Harita üzerinde ilerleyerek kayaçlar, madenler, gezegenler ve sürdürülebilirlik bölümlerini keşfet!
-      </p>
-    </header>
+  <div class="game-container">
+    <div class="title-glow">🎮 KAYAÇLAR YOLCULUĞU 🎮</div>
 
-    <!-- Harita ekranı (Ana ekran) -->
-    <section id="screen-home" class="screen active">
-      <div class="card map-card">
-        <h2>Jeoloji Haritası</h2>
-        <p class="map-intro">
-          Bölümleri sırayla tamamlamalısın. Bir bölüm bitmeden diğeri açılmaz.
-          <br />
-          <strong>01</strong> ile başla ve yolu takip et!
-        </p>
+    <div style="position: relative;">
+      <canvas id="game-canvas" width="800" height="600"></canvas>
+      <div class="scanlines"></div>
+    </div>
 
-        <div class="map-wrapper">
-          <img src="assets/map-bg.svg" alt="Jeoloji Haritası" class="map-image" />
+    <div class="controls-info">
+      <span>←</span> <span>→</span> Hareket
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span>↑</span> Cevap Seç
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <span>ENTER</span> Başla
+    </div>
 
-          <!-- 5 ana bölge düğmesi -->
-          <button class="map-node" data-section="rocks" data-index="0">
-            <span class="node-number">01</span>
-            <span class="node-label">Kayaçlar</span>
-          </button>
-
-          <button class="map-node" data-section="minerals" data-index="1">
-            <span class="node-number">02</span>
-            <span class="node-label">Madenler</span>
-          </button>
-
-          <button class="map-node" data-section="planets" data-index="2">
-            <span class="node-number">03</span>
-            <span class="node-label">Gezegenler</span>
-          </button>
-
-          <button class="map-node" data-section="sustainability" data-index="3">
-            <span class="node-number">04</span>
-            <span class="node-label">Sürdürülebilirlik</span>
-          </button>
-
-          <button class="map-node" data-section="daily" data-index="4">
-            <span class="node-number">05</span>
-            <span class="node-label">Günlük Hayat</span>
-          </button>
-
-          <!-- Final X noktası (kaçış) -->
-          <div class="map-final">
-            <span class="final-x">X</span>
-            <span class="final-label">Kaçış Noktası</span>
-          </div>
-        </div>
-
-        <div class="map-bottom">
-          <div class="map-status">
-            <h3>Bölüm Durumları</h3>
-            <ul id="scores-list" class="scores-list"></ul>
-            <p id="lock-message" class="lock-message"></p>
-          </div>
-          <div class="map-actions">
-            <button id="btn-check-escape" class="btn ghost">
-              🔐 Kaçışı ve Jeolog Seviyeni Kontrol Et
-            </button>
-          </div>
-        </div>
+    <div class="mobile-controls">
+      <div class="mobile-controls-move">
+        <button class="mobile-btn" id="btn-left">←</button>
+        <button class="mobile-btn" id="btn-right">→</button>
       </div>
-    </section>
-
-    <!-- Quiz ekranı -->
-    <section id="screen-quiz" class="screen">
-      <div class="card">
-        <div class="quiz-header">
-          <div>
-            <h2 id="quiz-title">Bölüm</h2>
-            <p id="quiz-subtitle" class="quiz-subtitle"></p>
-          </div>
-          <div class="progress-container">
-            <div class="progress-bar-bg">
-              <div id="progress-bar" class="progress-bar-fill"></div>
-            </div>
-            <span id="progress-text" class="progress-text">Soru 1 / 10</span>
-          </div>
-        </div>
-
-        <div class="question-area">
-          <div id="question-type-pill" class="question-type-pill"></div>
-          <div id="question-image-wrapper" class="question-image-wrapper hidden">
-            <img id="question-image" src="" alt="Soru görseli" class="question-image" />
-          </div>
-          <p id="question-text" class="question-text"></p>
-          <div id="options-container" class="options-container">
-            <!-- JS ile doldurulacak -->
-          </div>
-        </div>
-
-        <div class="quiz-footer">
-          <p id="feedback-text" class="feedback-text"></p>
-          <div class="quiz-footer-buttons">
-            <button id="btn-next-question" class="btn primary" disabled>
-              Sonraki Soru ▶
-            </button>
-            <button id="btn-quit" class="btn ghost small">
-              ⬅ Haritaya Dön
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Rozet ekranı -->
-    <section id="screen-badge" class="screen">
-      <div class="card">
-        <h2 id="badge-title">Tebrikler!</h2>
-        <p id="badge-score-text"></p>
-
-        <div class="badge-display">
-          <div class="badge-circle" id="badge-circle">
-            <span id="badge-emoji">🏅</span>
-          </div>
-          <p id="badge-name" class="badge-name"></p>
-        </div>
-
-        <p class="hint-text">
-          Haritaya dönüp bir sonraki bölümü açabilir ve
-          <strong>laboratuvardan kaçmaya</strong> devam edebilirsin.
-        </p>
-
-        <div class="badge-buttons">
-          <button id="btn-badge-home" class="btn secondary">
-            ⬅ Haritaya Dön
-          </button>
-          <button id="btn-badge-escape" class="btn primary">
-            🔐 Kaçışı ve Jeolog Seviyeni Kontrol Et
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Kaçış ekranı -->
-    <section id="screen-escape" class="screen">
-      <div class="card">
-        <h2>Kaçış ve Jeolog Seviyesi</h2>
-        <p id="escape-message"></p>
-        <p id="escape-code-text" class="escape-code-text"></p>
-        <p id="rank-text" class="rank-text"></p>
-
-        <button id="btn-escape-home" class="btn secondary">
-          ⬅ Haritaya Dön
-        </button>
-      </div>
-    </section>
-
-    <footer class="app-footer">
-      <p>Hazırlayan: 7. Sınıf Jeoloji Kaçış Odası Projesi</p>
-    </footer>
+      <button class="mobile-btn" id="btn-up" style="background: rgba(100, 255, 100, 0.2);">↑</button>
+      <button class="mobile-btn" id="btn-enter" style="font-size: 12px;">GO</button>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="game.js"></script>
+  <script>
+    // Mobile touch controls
+    const btnLeft = document.getElementById('btn-left');
+    const btnRight = document.getElementById('btn-right');
+    const btnUp = document.getElementById('btn-up');
+    const btnEnter = document.getElementById('btn-enter');
+
+    function simulateKey(key, down) {
+      const event = new KeyboardEvent(down ? 'keydown' : 'keyup', { key });
+      document.dispatchEvent(event);
+    }
+
+    // Touch events for movement buttons
+    ['touchstart', 'mousedown'].forEach(eventType => {
+      btnLeft.addEventListener(eventType, (e) => {
+        e.preventDefault();
+        simulateKey('ArrowLeft', true);
+      });
+      btnRight.addEventListener(eventType, (e) => {
+        e.preventDefault();
+        simulateKey('ArrowRight', true);
+      });
+    });
+
+    ['touchend', 'mouseup', 'mouseleave'].forEach(eventType => {
+      btnLeft.addEventListener(eventType, () => simulateKey('ArrowLeft', false));
+      btnRight.addEventListener(eventType, () => simulateKey('ArrowRight', false));
+    });
+
+    // Touch events for action buttons
+    btnUp.addEventListener('click', () => {
+      simulateKey('ArrowUp', true);
+      setTimeout(() => simulateKey('ArrowUp', false), 100);
+    });
+
+    btnEnter.addEventListener('click', () => {
+      simulateKey('Enter', true);
+      setTimeout(() => simulateKey('Enter', false), 100);
+    });
+  </script>
 </body>
+
 </html>
