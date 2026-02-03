@@ -10,96 +10,88 @@ const sections = [
     questions: [
       {
         type: "info",
-        image: "assets/rocks1.svg",
-        question: "Aşağıdakilerden hangisi bir magmatik (igneous) kayaçtır?",
-        options: ["Kumtaşı", "Mermer", "Bazalt", "Konglomera"],
-        correctIndex: 2,
+        image: "assets/k1.svg",
+        // question: "Kayaçlar doğada sürekli nasıl değişir?",
+        options: ["Güneş ısıyla", "Kayaç Döngüsüyle"],
+        correctIndex: 1,
       },
       {
         type: "info",
-        image: "assets/rocks2.svg",
-        question: "Tortul (sedimanter) kayaçlar genellikle nasıl oluşur?",
+        image: "assets/2.svg",
+        // question: "Granit hangi tür kayaçtır?",
         options: [
-          "Lavın hızlı soğumasıyla",
-          "Katmanlar halinde biriken parçacıkların sıkışmasıyla",
-          "Mevcut kayaçların erimesiyle",
-          "Yalnızca volkan içinde",
+          "Magmatik kayaç",
+          "Tortul Kayaç"
         ],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        question:
-          "Başkalaşım (metamorfik) kayaçların oluşmasında en önemli iki etken nedir?",
-        options: [
-          "Rüzgâr ve yağmur",
-          "Isı ve basınç",
-          "Manyetizma ve elektrik",
-          "Işık ve ses",
-        ],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        image: "assets/rocks3.svg",
-        question:
-          "Aşağıdaki kayaçlardan hangisi genellikle mutfak tezgâhlarında kullanılır?",
-        options: ["Tebeşir", "Kömür", "Granit", "Kumtaşı"],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        question:
-          "Kayaç döngüsünde magmanın katılaşmasıyla hangi kayaç türü oluşur?",
-        options: ["Tortul", "Magmatik", "Başkalaşım", "Fosil"],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        image: "assets/rocks2.svg",
-        question: "Aşağıdakilerden hangisi bir tortul kayaç örneğidir?",
-        options: ["Obsidyen", "Kumtaşı", "Granit", "Gnays"],
-        correctIndex: 1,
-      },
-      // Gezegen sorusu
-      {
-        type: "planet",
-        image: "assets/planet1.svg",
-        question:
-          "Dünyanın kabuğundaki kayaçlar en çok hangi gezegende gözlenen katı yüzey kayaçlarına benzer?",
-        options: ["Jüpiter", "Mars", "Neptün", "Uranüs"],
-        correctIndex: 1,
-      },
-      // Şans sorusu
-      {
-        type: "chance",
-        question:
-          "Şans Sorusu: Kayaçlarla ilgili hangi cümle daha doğrudur?",
-        options: [
-          "Tüm kayaçlar aynı süreçle oluşur.",
-          "Kayaçlar asla değişmez.",
-          "Kayaçlar zamanla bir türden diğerine dönüşebilir.",
-          "Kayaçlar sadece denizlerde oluşur.",
-        ],
-        correctIndex: 2,
-      },
-      // Ek resimli bilgi soruları
-      {
-        type: "info",
-        image: "assets/rocks1.svg",
-        question:
-          "Aşağıdaki kayaçlardan hangisi lavın çok hızlı soğumasıyla oluşan cam gibi parlak bir kayaçtır?",
-        options: ["Şeyl", "Obsidyen", "Mermer", "Kireçtaşı"],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        image: "assets/rocks3.svg",
-        question:
-          "Aşağıdaki kayaç türlerinden hangisi genellikle katmanlı bir yapıya sahiptir?",
-        options: ["Kumtaşı", "Granit", "Obsidyen", "Diorit"],
         correctIndex: 0,
       },
+      {
+        type: "info",
+        image: "assets/3.svg",
+        options: [
+          "Tortul Kayaç",
+          "Başkalaşım Kayaç"
+        ],
+        correctIndex: 1,
+      },
+      {
+        type: "info",
+        image: "assets/4.svg",
+        options: ["Fosiller", "Kristal"],
+        correctIndex: 0,
+      },
+      {
+        type: "info",
+        image: "assets/5.svg",
+        options: ["Magmatik", "Metamorfik"],
+        correctIndex: 0,
+      },
+      // {
+      //   type: "info",
+      //   image: "assets/rocks2.svg",
+      //   question: "Aşağıdakilerden hangisi bir tortul kayaç örneğidir?",
+      //   options: ["Obsidyen", "Kumtaşı", "Granit", "Gnays"],
+      //   correctIndex: 1,
+      // },
+      // // Gezegen sorusu
+      // {
+      //   type: "planet",
+      //   image: "assets/planet1.svg",
+      //   question:
+      //     "Dünyanın kabuğundaki kayaçlar en çok hangi gezegende gözlenen katı yüzey kayaçlarına benzer?",
+      //   options: ["Jüpiter", "Mars", "Neptün", "Uranüs"],
+      //   correctIndex: 1,
+      // },
+      // // Şans sorusu
+      // {
+      //   type: "chance",
+      //   question:
+      //     "Şans Sorusu: Kayaçlarla ilgili hangi cümle daha doğrudur?",
+      //   options: [
+      //     "Tüm kayaçlar aynı süreçle oluşur.",
+      //     "Kayaçlar asla değişmez.",
+      //     "Kayaçlar zamanla bir türden diğerine dönüşebilir.",
+      //     "Kayaçlar sadece denizlerde oluşur.",
+      //   ],
+      //   correctIndex: 2,
+      // },
+      // // Ek resimli bilgi soruları
+      // {
+      //   type: "info",
+      //   image: "assets/rocks1.svg",
+      //   question:
+      //     "Aşağıdaki kayaçlardan hangisi lavın çok hızlı soğumasıyla oluşan cam gibi parlak bir kayaçtır?",
+      //   options: ["Şeyl", "Obsidyen", "Mermer", "Kireçtaşı"],
+      //   correctIndex: 1,
+      // },
+      // {
+      //   type: "info",
+      //   image: "assets/rocks3.svg",
+      //   question:
+      //     "Aşağıdaki kayaç türlerinden hangisi genellikle katmanlı bir yapıya sahiptir?",
+      //   options: ["Kumtaşı", "Granit", "Obsidyen", "Diorit"],
+      //   correctIndex: 0,
+      // },
     ],
   },
   {
@@ -109,92 +101,84 @@ const sections = [
     questions: [
       {
         type: "info",
-        image: "assets/mineral1.svg",
-        question: "Mineral nedir?",
+        image: "assets/6.svg",
         options: [
-          "Yer altındaki herhangi bir sıvı",
-          "Doğada oluşan, inorganik, kristal yapılı katı bir madde",
-          "Herhangi bir kaya parçası",
-          "Her parlak görünen nesne",
+          "Bor",
+          "Altın"
         ],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        question:
-          "Bir mineralin ne kadar kolay çizilebildiğini açıklayan özellik hangisidir?",
-        options: ["Renk", "Sertlik", "Çizgi (streak)", "Parlaklık (luster)"],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        image: "assets/mineral2.svg",
-        question: "Mohs ölçeği hangi mineral özelliğini ölçer?",
-        options: ["Sıcaklık", "Sertlik", "Yaş", "Yoğunluk"],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        question:
-          "Bir mineralin parlak, mat veya metalik görünmesini tanımlayan özellik hangisidir?",
-        options: ["Parlaklık (luster)", "Çizgi (streak)", "Dilime ayrılma", "Renk"],
         correctIndex: 0,
       },
       {
         type: "info",
-        image: "assets/mineral1.svg",
-        question:
-          "Sofra tuzu olarak kullanılan ve kimyasal formülü NaCl olan mineral hangisidir?",
-        options: ["Kuvars", "Halit", "Kalsit", "Fluorit"],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        question: "Bir mineralin çizgi (streak) özelliği neyi ifade eder?",
-        options: [
-          "Kristal şeklinin uzunluğunu",
-          "Porselen plaka üzerindeki toz halindeki rengini",
-          "Yüzeydeki çizgilerin sayısını",
-          "Mineralin ağırlığını",
-        ],
-        correctIndex: 1,
-      },
-      {
-        type: "planet",
-        image: "assets/planet1.svg",
-        question:
-          "Ay yüzeyinde bulunan ve Dünya'da da kullanılan koyu renkli, demir ve magnezyum içeren mineral grubu hangisidir?",
-        options: ["Feldispat", "Olivin", "Halit", "Tebeşir"],
-        correctIndex: 1,
-      },
-      {
-        type: "chance",
-        question:
-          "Şans Sorusu: Günlük hayatta aşağıdakilerden hangisi mineral içermez?",
-        options: ["Cam bardak", "Kâğıt", "Cep telefonu", "Diş macunu"],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        image: "assets/mineral2.svg",
-        question:
-          "Aşağıdaki minerallerden hangisi bebek pudrasında kullanılan çok yumuşak bir mineraldir?",
-        options: ["Talk", "Elmas", "Feldispat", "Manyetit"],
+        image: "assets/7.svg",
+        options: ["Balıkesir", "Zonguldak"],
         correctIndex: 0,
       },
       {
         type: "info",
-        image: "assets/mineral1.svg",
-        question:
-          "Cep telefonlarının elektronik devrelerinde hangi tür mineraller en çok kullanılır?",
-        options: [
-          "Sadece süs taşları",
-          "Metalik mineraller ve nadir toprak elementleri",
-          "Yalnızca halit",
-          "Sadece tuz mineralleri",
-        ],
+        image: "assets/8.svg",
+        options: ["Edirne", "Afyon"],
         correctIndex: 1,
       },
+      {
+        type: "info",
+        image: "assets/9.svg",
+        options: ["Yenilenebilir Enerji Kaynağı", "Fosil Kökenli Enerji Kaynağı"],
+        correctIndex: 1,
+      },
+      {
+        type: "info",
+        image: "assets/10.svg",
+        options: ["Zonguldak", "Kars"],
+        correctIndex: 0,
+      },
+      // {
+      //   type: "info",
+      //     image: "assets/11.svg",
+      //   options: [
+      //     "Kristal şeklinin uzunluğunu",
+      //     "Porselen plaka üzerindeki toz halindeki rengini",
+      //     "Yüzeydeki çizgilerin sayısını",
+      //     "Mineralin ağırlığını",
+      //   ],
+      //   correctIndex: 1,
+      // },
+      // {
+      //   type: "planet",
+      //   image: "assets/planet1.svg",
+      //   question:
+      //     "Ay yüzeyinde bulunan ve Dünya'da da kullanılan koyu renkli, demir ve magnezyum içeren mineral grubu hangisidir?",
+      //   options: ["Feldispat", "Olivin", "Halit", "Tebeşir"],
+      //   correctIndex: 1,
+      // },
+      // {
+      //   type: "chance",
+      //   question:
+      //     "Şans Sorusu: Günlük hayatta aşağıdakilerden hangisi mineral içermez?",
+      //   options: ["Cam bardak", "Kâğıt", "Cep telefonu", "Diş macunu"],
+      //   correctIndex: 1,
+      // },
+      // {
+      //   type: "info",
+      //   image: "assets/mineral2.svg",
+      //   question:
+      //     "Aşağıdaki minerallerden hangisi bebek pudrasında kullanılan çok yumuşak bir mineraldir?",
+      //   options: ["Talk", "Elmas", "Feldispat", "Manyetit"],
+      //   correctIndex: 0,
+      // },
+      // {
+      //   type: "info",
+      //   image: "assets/mineral1.svg",
+      //   question:
+      //     "Cep telefonlarının elektronik devrelerinde hangi tür mineraller en çok kullanılır?",
+      //   options: [
+      //     "Sadece süs taşları",
+      //     "Metalik mineraller ve nadir toprak elementleri",
+      //     "Yalnızca halit",
+      //     "Sadece tuz mineralleri",
+      //   ],
+      //   correctIndex: 1,
+      // },
     ],
   },
   {
@@ -204,100 +188,38 @@ const sections = [
     questions: [
       {
         type: "info",
-        image: "assets/planet1.svg",
-        question:
-          "Hangi gezegen, yüzeyinde en çok krater ve kayaç yapılarıyla bilinir?",
-        options: ["Venüs", "Mars", "Merkür", "Jüpiter"],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        question:
-          "Dünya'nın hangi katmanında çoğunlukla demir ve nikel gibi metaller bulunur?",
-        options: ["Kabuk", "Manto", "Çekirdek", "Atmosfer"],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        image: "assets/planet1.svg",
-        question:
-          "Mars yüzeyindeki kızıl rengin temel nedeni hangi element içeriğidir?",
-        options: ["Bakır bileşikleri", "Demir oksit (pas)", "Altın tozu", "Sodyum klorür"],
+        image: "assets/21.svg",
+        options: [ "Mars", "Neptün"],
         correctIndex: 1,
       },
       {
         type: "info",
-        question:
-          "Aşağıdakilerden hangisi kayaç gezegen (terrestrial planet) değildir?",
-        options: ["Dünya", "Venüs", "Neptün", "Mars"],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        image: "assets/rocks1.svg",
-        question:
-          "Dünya'nın kabuğu esas olarak hangi tür maddelerden oluşur?",
-        options: [
-          "Gazlar ve buzlar",
-          "Metaller ve plastikler",
-          "Silisyum ve oksijen içeren kayaç ve mineraller",
-          "Sadece su",
-        ],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        question:
-          "Ay'dan getirilen kaya örnekleri, bilim insanlarına neyi anlamada yardımcı olmuştur?",
-        options: [
-          "Ay'daki hayvan türlerini",
-          "Ay'ın yaşını ve oluşum sürecini",
-          "Ay'ın internet hızını",
-          "Ay'daki bitki çeşitliliğini",
-        ],
-        correctIndex: 1,
-      },
-      {
-        type: "planet",
-        image: "assets/planet1.svg",
-        question:
-          "Güneş sisteminde, yüzeyinde hem buz hem kayaç bulunan ve cüce gezegen olarak adlandırılan gök cismi hangisidir?",
-        options: ["Plüton", "Mars", "Satürn", "Merkür"],
+         image: "assets/22.svg",
+        options: ["Merkür", "Venüs"],
         correctIndex: 0,
       },
       {
-        type: "chance",
-        question:
-          "Şans Sorusu: Hangi gezegenin uydusu, buzlu yüzeyinin altında okyanus barındırdığı için yaşam ihtimali açısından ilgi çekmektedir?",
-        options: ["Dünya'nın Ay'ı", "Europa", "Titan", "Ganymede"],
+        type: "info",
+        image: "assets/23.svg",
+        options: ["Manto", "Çekirdek"],
         correctIndex: 1,
       },
       {
         type: "info",
-        image: "assets/rocks2.svg",
-        question:
-          "Dünya'nın kayaç kabuğunda en çok bulunan element çifti hangisidir?",
-        options: [
-          "Demir ve karbon",
-          "Silisyum ve oksijen",
-          "Altın ve gümüş",
-          "Bakır ve nikel",
-        ],
-        correctIndex: 1,
+         image: "assets/24.svg",
+        options: ["Demir Oksit (Pas)", "Bakır Bileşikleri"],
+        correctIndex: 0,
       },
       {
         type: "info",
-        image: "assets/rocks3.svg",
-        question:
-          "Bazı göktaşları Dünya'ya düştüğünde, içerdikleri madenler nedeniyle neden değerlidir?",
+        image: "assets/25.svg",
         options: [
-          "Sadece süslü göründükleri için",
-          "Çoğunlukla plastik içerdiği için",
-          "Nadir metaller ve mineraller taşıdıkları için",
-          "Sadece hafif oldukları için",
+          "Venüs",
+          "Neptün"
         ],
-        correctIndex: 2,
+        correctIndex: 1,
       },
+     
     ],
   },
   {
@@ -307,123 +229,109 @@ const sections = [
     questions: [
       {
         type: "info",
-        image: "assets/sustain1.svg",
-        question: "Sürdürülebilirlik ne anlama gelir?",
-        options: [
+        image: "assets/11.svg",
+         options: [
           "Kaynakları hızlıca tüketmek",
-          "Doğal kaynakları gelecek nesilleri de düşünerek kullanmak",
-          "Sadece yeni teknolojiler kullanmak",
-          "Yalnızca para biriktirmek",
+          "Doğal kaynakları gelecek nesilleri de düşünerek kullanmak"
         ],
         correctIndex: 1,
       },
       {
         type: "info",
-        question: "Aşağıdakilerden hangisi sürdürülebilir bir davranıştır?",
+        image: "assets/12.svg",
         options: [
-          "Gereksiz yere ışıkları açık bırakmak",
-          "Her gün tek kullanımlık plastik şişe almak",
-          "Geri dönüşüme uygun atıkları ayrıştırmak",
-          "Çöpleri doğaya atmak",
-        ],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        image: "assets/sustain1.svg",
-        question:
-          "Madenlerin ve kayaçların aşırı ve plansız çıkarılmasının sonucu ne olabilir?",
-        options: [
-          "Daha temiz hava",
-          "Toprak erozyonu ve doğa tahribatı",
-          "Bol oksijen üretimi",
-          "Daha fazla orman",
-        ],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        question:
-          "Aşağıdakilerden hangisi yenilenebilir enerji kaynağıdır?",
-        options: ["Kömür", "Doğal gaz", "Rüzgâr", "Petrol"],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        image: "assets/daily1.svg",
-        question:
-          "Geri dönüşüm kutularına atılması en doğru olan seçenek hangisidir?",
-        options: [
-          "Cam şişe ve metal kutular",
-          "Evdeki organik yemek artıkları",
-          "Toprak ve taşlar",
-          "Her türlü çöp",
+          "Yeni maden çıkarmayı azaltır",
+          "Kanunen gereklidir"
         ],
         correctIndex: 0,
       },
       {
         type: "info",
-        question:
-          "Aşağıdakilerden hangisi su tasarrufu sağlayan bir davranıştır?",
+        image: "assets/13.svg",
         options: [
-          "Diş fırçalarken musluğu açık bırakmak",
-          "Uzun süre duşta kalmak",
-          "Bozulan musluğu tamir ettirmek",
-          "Bahçeyi öğle saatinde bol suyla sulamak",
+          "Geri dönüşüme uygun atıkları ayrıştırmak",
+          "Çöpleri doğaya atmak"
         ],
-        correctIndex: 2,
-      },
-      {
-        type: "planet",
-        image: "assets/planet1.svg",
-        question:
-          "Bilim insanları neden diğer gezegenlerde su ve maden arıyor?",
-        options: [
-          "Gezegenleri süslemek için",
-          "Yeni tatiller planlamak için",
-          "Yaşam ihtimali ve kaynak kullanımı açısından bilgi edinmek için",
-          "Gezegenleri boyamak için",
-        ],
-        correctIndex: 2,
-      },
-      {
-        type: "chance",
-        question:
-          "Şans Sorusu: Aşağıdakilerden hangisi en az çevre dostu seçenektir?",
-        options: [
-          "Bez çanta kullanmak",
-          "Plastik poşetleri tekrar tekrar kullanmak",
-          "Her alışverişte yeni plastik poşet almak",
-          "Metal matara ile su taşımak",
-        ],
-        correctIndex: 2,
+        correctIndex: 0,
       },
       {
         type: "info",
-        image: "assets/sustain1.svg",
-        question:
-          "Madenleri sürdürülebilir kullanmak için hangi yöntem daha uygundur?",
-        options: [
-          "Sadece kolay ulaşılabilen madenleri kazmak",
-          "Madenleri geri dönüştürerek tekrar kullanmak",
-          "Tüm madenleri aynı anda çıkarmak",
-          "Yer altını tamamen boşaltmak",
-        ],
+        image: "assets/14.svg",
+        options: ["Kömür",  "Rüzgâr"],
         correctIndex: 1,
       },
       {
         type: "info",
-        image: "assets/daily1.svg",
-        question:
-          "Bir okulda sürdürülebilirlik projesi yaparken ilk adım ne olabilir?",
+        image: "assets/15.svg",
         options: [
-          "Okuldaki tüm ağaçları kesmek",
-          "Geri dönüşüm ve enerji tasarrufu afişleri hazırlamak",
-          "Sınıflarda ışıkları sürekli açık bırakmak",
-          "Plastik kullanımını artırmak",
+          "Daha fazla orman",
+          "Toprak erozyonu ve doğa tahribatı"
         ],
         correctIndex: 1,
       },
+      // {
+      //   type: "info",
+      //   question:
+      //     "Aşağıdakilerden hangisi su tasarrufu sağlayan bir davranıştır?",
+      //   options: [
+      //     "Diş fırçalarken musluğu açık bırakmak",
+      //     "Uzun süre duşta kalmak",
+      //     "Bozulan musluğu tamir ettirmek",
+      //     "Bahçeyi öğle saatinde bol suyla sulamak",
+      //   ],
+      //   correctIndex: 2,
+      // },
+      // {
+      //   type: "planet",
+      //   image: "assets/planet1.svg",
+      //   question:
+      //     "Bilim insanları neden diğer gezegenlerde su ve maden arıyor?",
+      //   options: [
+      //     "Gezegenleri süslemek için",
+      //     "Yeni tatiller planlamak için",
+      //     "Yaşam ihtimali ve kaynak kullanımı açısından bilgi edinmek için",
+      //     "Gezegenleri boyamak için",
+      //   ],
+      //   correctIndex: 2,
+      // },
+      // {
+      //   type: "chance",
+      //   question:
+      //     "Şans Sorusu: Aşağıdakilerden hangisi en az çevre dostu seçenektir?",
+      //   options: [
+      //     "Bez çanta kullanmak",
+      //     "Plastik poşetleri tekrar tekrar kullanmak",
+      //     "Her alışverişte yeni plastik poşet almak",
+      //     "Metal matara ile su taşımak",
+      //   ],
+      //   correctIndex: 2,
+      // },
+      // {
+      //   type: "info",
+      //   image: "assets/sustain1.svg",
+      //   question:
+      //     "Madenleri sürdürülebilir kullanmak için hangi yöntem daha uygundur?",
+      //   options: [
+      //     "Sadece kolay ulaşılabilen madenleri kazmak",
+      //     "Madenleri geri dönüştürerek tekrar kullanmak",
+      //     "Tüm madenleri aynı anda çıkarmak",
+      //     "Yer altını tamamen boşaltmak",
+      //   ],
+      //   correctIndex: 1,
+      // },
+      // {
+      //   type: "info",
+      //   image: "assets/daily1.svg",
+      //   question:
+      //     "Bir okulda sürdürülebilirlik projesi yaparken ilk adım ne olabilir?",
+      //   options: [
+      //     "Okuldaki tüm ağaçları kesmek",
+      //     "Geri dönüşüm ve enerji tasarrufu afişleri hazırlamak",
+      //     "Sınıflarda ışıkları sürekli açık bırakmak",
+      //     "Plastik kullanımını artırmak",
+      //   ],
+      //   correctIndex: 1,
+      // },
     ],
   },
   {
@@ -433,104 +341,95 @@ const sections = [
     questions: [
       {
         type: "info",
-        image: "assets/daily1.svg",
-        question:
-          "Aşağıdakilerden hangisi günlük hayatta kullandığımız bir kayaç ürünüdür?",
-        options: ["Plastik sandalye", "Taş zemin döşemesi (mermer)", "Kâğıt peçete", "Pamuklu tişört"],
+        image: "assets/16.svg",
+        options: ["Barit", "Bakır"],
         correctIndex: 1,
       },
       {
         type: "info",
-        question: "Cam yapımında en çok hangi malzeme kullanılır?",
-        options: ["Kum (silis)", "Kil", "Odun", "Petrol"],
+        image: "assets/17.svg",
+        options: ["Kuvars", "Mermer"],
         correctIndex: 0,
       },
       {
         type: "info",
-        image: "assets/mineral1.svg",
-        question:
-          "Diş macununda hangi mineral türü sıklıkla kullanılır?",
-        options: ["Altın", "Fluorit ve kalsiyum bileşikleri", "Kömür", "Kuvars kristali"],
-        correctIndex: 1,
+        image: "assets/18.svg",
+         options: ["Bor","Titanyum"],
+        correctIndex: 0,
       },
       {
         type: "info",
-        question:
-          "Aşağıdakilerden hangisi metallerin günlük hayattaki kullanımına örnektir?",
+        image: "assets/19.svg",
         options: [
-          "Sadece süs amaçlı kullanılır.",
-          "Sadece müzelerde saklanır.",
-          "Ev aletleri, kablolar ve araçların yapımında kullanılır.",
-          "Hiç kullanılmaz.",
-        ],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        image: "assets/daily1.svg",
-        question:
-          "Yazı yazmak için kullandığımız kurşun kalem ucunda aslında hangi mineral vardır?",
-        options: ["Elmas", "Grafit", "Altın", "Gümüş"],
-        correctIndex: 1,
-      },
-      {
-        type: "info",
-        question:
-          "Aşağıdakilerden hangisi kayaç ve madenlerin evimizdeki kullanımına örnek değildir?",
-        options: [
-          "Mutfak tezgâhı (granit/mermer)",
-          "Seramik banyo fayansları",
-          "Telefon elektronik devreleri",
-          "Bulutların şekli",
-        ],
-        correctIndex: 3,
-      },
-      {
-        type: "planet",
-        image: "assets/planet1.svg",
-        question:
-          "Uzay araştırmalarında kullanılan roket ve uyduların yapımında neden hafif ve dayanıklı metaller tercih edilir?",
-        options: [
-          "Daha güzel göründükleri için",
-          "Uzaya daha kolay çıkabilmeleri ve dayanıklı olmaları için",
-          "Daha ucuz oldukları için",
-          "Metaller uzayda erimediği için",
-        ],
-        correctIndex: 1,
-      },
-      {
-        type: "chance",
-        question:
-          "Şans Sorusu: Aşağıdakilerden hangisi maden içeren teknolojik bir üründür?",
-        options: ["Tahta masa", "Pamuklu yastık", "Akıllı telefon", "Defter"],
-        correctIndex: 2,
-      },
-      {
-        type: "info",
-        image: "assets/mineral2.svg",
-        question:
-          "Altın ve gümüş gibi değerli metaller en çok hangi amaçla kullanılır?",
-        options: [
-          "Sadece sünger yapımında",
-          "Takı, elektronik devreler ve yatırım amacıyla",
-          "Yastık doldurmak için",
-          "Sadece duvar boyasında",
+          "Kil",
+          "Demir"
         ],
         correctIndex: 1,
       },
       {
         type: "info",
-        image: "assets/rocks1.svg",
-        question:
-          "Evlerin duvarlarında kullanılan çimento ve betonun ana hammaddesi hangisidir?",
-        options: [
-          "Toprak ve yaprak",
-          "Kireçtaşı ve kil gibi kayaçlar",
-          "Sadece su",
-          "Sadece plastik",
-        ],
-        correctIndex: 1,
+        image: "assets/20.svg",
+        options: [ "Grafit", "Kromit"],
+        correctIndex: 0,
       },
+      // {
+      //   type: "info",
+      //   question:
+      //     "Aşağıdakilerden hangisi kayaç ve madenlerin evimizdeki kullanımına örnek değildir?",
+      //   options: [
+      //     "Mutfak tezgâhı (granit/mermer)",
+      //     "Seramik banyo fayansları",
+      //     "Telefon elektronik devreleri",
+      //     "Bulutların şekli",
+      //   ],
+      //   correctIndex: 3,
+      // },
+      // {
+      //   type: "planet",
+      //   image: "assets/planet1.svg",
+      //   question:
+      //     "Uzay araştırmalarında kullanılan roket ve uyduların yapımında neden hafif ve dayanıklı metaller tercih edilir?",
+      //   options: [
+      //     "Daha güzel göründükleri için",
+      //     "Uzaya daha kolay çıkabilmeleri ve dayanıklı olmaları için",
+      //     "Daha ucuz oldukları için",
+      //     "Metaller uzayda erimediği için",
+      //   ],
+      //   correctIndex: 1,
+      // },
+      // {
+      //   type: "chance",
+      //   question:
+      //     "Şans Sorusu: Aşağıdakilerden hangisi maden içeren teknolojik bir üründür?",
+      //   options: ["Tahta masa", "Pamuklu yastık", "Akıllı telefon", "Defter"],
+      //   correctIndex: 2,
+      // },
+      // {
+      //   type: "info",
+      //   image: "assets/mineral2.svg",
+      //   question:
+      //     "Altın ve gümüş gibi değerli metaller en çok hangi amaçla kullanılır?",
+      //   options: [
+      //     "Sadece sünger yapımında",
+      //     "Takı, elektronik devreler ve yatırım amacıyla",
+      //     "Yastık doldurmak için",
+      //     "Sadece duvar boyasında",
+      //   ],
+      //   correctIndex: 1,
+      // },
+      // {
+      //   type: "info",
+      //   image: "assets/rocks1.svg",
+      //   question:
+      //     "Evlerin duvarlarında kullanılan çimento ve betonun ana hammaddesi hangisidir?",
+      //   options: [
+      //     "Toprak ve yaprak",
+      //     "Kireçtaşı ve kil gibi kayaçlar",
+      //     "Sadece su",
+      //     "Sadece plastik",
+      //   ],
+      //   correctIndex: 1,
+      // },
     ],
   },
 ];
